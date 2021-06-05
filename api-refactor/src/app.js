@@ -6,9 +6,11 @@ const app = express();
 //Ejecuto el llamado a mis rutas
 const indexRouter = require('./routes/index');
 const productsRoutes = require('./routes/productsRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 
 //Aquí llamo a la ruta de las APIs
 const apiProductsRouter = require('./routes/api/products')
+const apiUsersRouter = require('./routes/api/users')
 
 // view engine setup
 app.set('views', path.resolve(__dirname, './views'));
@@ -24,8 +26,10 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/product', productsRoutes);
+app.use('/user', usersRoutes);
 //Aquí creo la colección de mis recursos de APIs
 app.use('/api/product',apiProductsRouter);
+app.use('/api/user',apiUsersRouter);
 
 //Activando el servidor desde express
 app.listen('3001', () => console.log('Rock en el puerto 3001'));
