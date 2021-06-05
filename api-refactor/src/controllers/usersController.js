@@ -20,7 +20,7 @@ const usersController = {
 
 
     edit: async function (req, res) {
-        let productToEdit = await db.User.findByPk(req.params.id);
+        let userToEdit = await db.User.findByPk(req.params.id);
             
         res.render('userEdit.ejs', {user : userToEdit})
     },
