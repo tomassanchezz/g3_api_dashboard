@@ -115,7 +115,7 @@ const productsController = {
     },
     destroy: function (req, res) {
         let productId = req.params.id;
-        db.Product.destroy({where: {id: movieId}, force: true}) //Force es para que la accion se ejecute
+        db.Product.destroy({where: {id: productId}, force: true}) //Force es para que la accion se ejecute
         .then(confirm => {
             let respuesta;
             if(confirm){
