@@ -17,7 +17,7 @@ function SearchMovies(){
                 setProduct(data.data);
 		    })
             .catch(error => console.log(error));
-	}, [])
+	}, [keyword])
 
 	const buscarProducto = e => {
 		e.preventDefault();
@@ -59,7 +59,7 @@ function SearchMovies(){
 														style={{ width: '90%', height: '400px', objectFit: 'cover' }} 
 													/>
 												</div>
-												<p>{product.price}</p>
+												<p>{'$' + product.price}</p>
 											</div>
 										</div>
 									</div>

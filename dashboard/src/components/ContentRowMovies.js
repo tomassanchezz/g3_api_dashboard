@@ -3,6 +3,7 @@ import SmallCard from './SmallCard';
 
 function ContentRowMovies(){
     const [products, setProducts] = useState([]);
+    const [users, setUsers] = useState([]);
 
 	useEffect(() => {
 		fetch('/api/product')
@@ -13,7 +14,15 @@ function ContentRowMovies(){
             .catch(error => console.log(error));
 	}, [])
 
-    // Traer tambien usuarios
+    useEffect(() => {
+		fetch('/api/user')
+            .then( r => r.json())
+            .then( data => {
+                setUsers(data.data);
+		    })
+            .catch(error => console.log(error));
+	}, [])
+
 
     let productsInDB = {
         title: 'Products in Database',
@@ -22,7 +31,14 @@ function ContentRowMovies(){
         icon: 'fa-clipboard-list'
     }
     
-    let cartProps = [productsInDB];
+    let usersInDB = {
+        title: 'Users in Database',
+        color: 'secondary', 
+        cuantity: users.length,
+        icon: 'fa-clipboard-list'
+    }
+
+    let cartProps = [productsInDB, usersInDb];
 
     return (
     

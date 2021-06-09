@@ -10,11 +10,9 @@ function ChartRow(props){
                     <td>{props.category}</td>
                     <td>{props.colors}</td>
                     <td>{props.sizes}</td>
-                    <td>{props.price}</td>
+                    <td>{'$' + props.price}</td>
                 </tr>
             )
     }
     
-        
-
 export default ChartRow;
