@@ -38,7 +38,7 @@ function ContentRowMovies(){
         icon: 'fa-clipboard-list'
     }
 
-    let cartProps = [productsInDB, usersInDb];
+    let cartProps = [productsInDB, usersInDB];
 
     return (
     

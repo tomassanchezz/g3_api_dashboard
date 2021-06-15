@@ -4,7 +4,6 @@ import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastProductInDb from './LastProductInDb';
 import ContentRowMovies from './ContentRowMovies';
-import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -28,7 +27,7 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - Refactor</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -57,15 +56,6 @@ function SideBar(){
                 <Link className="nav-link" to="/ContentRowMovies">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tables</span></Link>
-                </li>
-
-                {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider d-none d-md-block"/>
-                
-                <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/SearchMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Buscar Pelis</span></Link>
                 </li>
             </ul>
             {/*<!-- End of Sidebar -->*/}
@@ -98,9 +88,6 @@ function SideBar(){
                 </Route>
                 <Route path="/ContentRowMovies">
                     <ContentRowMovies />
-                </Route>
-                <Route path="/SearchMovies">
-                    <SearchMovies />
                 </Route>
                 <Route component={NotFound} />
             </Switch>
